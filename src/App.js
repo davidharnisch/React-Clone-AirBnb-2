@@ -10,21 +10,17 @@ import Footer from "./components/Footer"
 function App() {
     const cardElements = data.map(cardData => {
         return <Card
-        img={cardData.coverImg}
-        rating={cardData.stats.rating}
-        reviewCount={cardData.stats.reviewCount}
-        location={cardData.location}
-        title={cardData.title}
-        price={cardData.price}
+        key={cardData.id}
+        item={cardData}
     />
     })
     return (
     <div className = "mainBody">
         <Header />
         <Hero />
-        <div className="all-card">
+        <section className="cards-list">
             {cardElements}
-        </div>
+        </section>
         <Footer />
     </div>
     )
